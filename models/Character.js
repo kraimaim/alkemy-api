@@ -12,7 +12,7 @@ module.exports = (sequelize, type) => {
         edad: type.INTEGER,
         peso: type.FLOAT,
         historia: type.TEXT,
-        moviesparticipo: type.JSON
+        moviesparticipo: type.STRING
     },{
         timestamps:false
     })

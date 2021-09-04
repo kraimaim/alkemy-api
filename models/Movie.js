@@ -9,7 +9,8 @@ module.exports = (sequelize, type) => {
         titulo: type.STRING,
         imagen: type.STRING,
         calificacion: type.INTEGER,
-        fechalanzamiento: type.DATE
+        fechalanzamiento: type.DATE,
+        personajes: type.STRING
     },{
         timestamps:false
     })

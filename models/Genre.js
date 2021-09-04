@@ -8,7 +8,8 @@ module.exports = (sequelize, type) => {
             autoIncrement: true
         },
         nombre: type.STRING,
-        imagen: type.STRING
+        imagen: type.STRING,
+        peliculas: type.STRING
     },{
         timestamps:false
     })

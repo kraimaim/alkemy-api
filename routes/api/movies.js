@@ -8,6 +8,12 @@ router.get('/', async (req, res) => {
     res.json(movies)
     
 })
+//buscar peliculas por titulo
+router.get('/:movieTitulo', async (req, res) => {
+    const movies = await Movie.findAll({where: { titulo: req.params.movieTitulo}})
+    res.json(movies)
+    
+})
 
 router.post('/', async (req,res) => {
     const movie = await Movie.create(req.body)
@@ -22,8 +28,8 @@ router.put('/:movieId', async (req, res) => {
 })
 
 router.delete('/:movieId', async (req, res) => {
-    await Moive.destroy({
-        where: { id: req.params.filmId}
+    await Movie.destroy({
+        where: { id: req.params.movieId}
     })
     res.json({ success: 'Se ha borrado la pelicula' })
 })

@@ -3,13 +3,21 @@ const router = require('express').Router()
 const { Character } = require('../../database/db')
 
 router.get('/', async (req, res) => {
-    console.log(req.usuarioId)
+    
     const characters = await Character.findAll()
     res.json(characters)
     
 })
+//Buscar personaje por nombre
+router.get('/:nombrePersonaje', async (req, res) => {
+    const characters = await Character.findAll({where: { nombre: req.params.nombrePersonaje}})
+    res.json(characters)
+})
+
+
 
 router.post('/', async (req,res) => {
+    
     const character = await Character.create(req.body)
     res.json(character)
 })
